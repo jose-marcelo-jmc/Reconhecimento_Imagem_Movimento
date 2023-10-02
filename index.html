@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+    #circulo {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border-radius: 50%; 
+
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <div onmouseover="mudar()" id="circulo"></div>
+    <script>
+        function mudar(){
+            var objeto = document.getElementById("circulo");
+
+            var LarguraJanela = window.innerWidth;
+            var AlturaJanela = window.innerHeight;
+
+            var maxX = LarguraJanela - objeto.offsetWidth;
+            var maxY = AlturaJanela - objeto.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            objeto.style.left = aleatorioX + "px";
+            objeto.style.top = aleatorioY + "px";
+        }
+    </script>
+</body>
+</html>
